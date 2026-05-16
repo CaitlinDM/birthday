@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beboo 💕</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="app">
+
+    <!-- ===== ÉCRAN 0 : CHARGEMENT ===== -->
+    <section class="screen is-active" id="p0" aria-label="Chargement">
+      <div class="loadingWrap">
+        <div class="loadingContent">
+          <div id="loadingLottie" class="loadingLottie" aria-hidden="true">
+            <svg class="heartSvg" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 85 C50 85 10 55 10 30 C10 15 20 5 35 5 C42 5 48 9 50 13 C52 9 58 5 65 5 C80 5 90 15 90 30 C90 55 50 85 50 85Z" fill="#7c1515"/>
+            </svg>
+          </div>
+          <p class="loadingText">Chargement des souvenirs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ÉCRAN 1 : INTRO ===== -->
+    <section class="screen" id="p1">
+      <div class="heartsLayer" id="heartsLayer"></div>
+      <div class="wrap">
+        <div class="heroBox">
+          <div class="typewrap">
+            <h1 class="typeTitle" id="typeTitle"></h1>
+            <span class="caret" aria-hidden="true"></span>
+          </div>
+          <p class="sub">Pépette et moi te souhaitons le meilleur des anniversaires</p>
+          <button class="btn" id="startBtn">Célébrons le</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ÉCRAN 2 : ENVELOPPES PAR ANNÉE ===== -->
+    <section class="screen" id="p2">
+      <div class="wrap">
+        <div class="page2Box">
+          <div class="yearShell">
+
+            <button id="prevYearBtn" class="yearNavBtn prev" type="button" aria-label="Année précédente">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#efe7d2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+
+            <div class="yearPanel">
+              <div class="yearHeader">
+                <h2 class="yearTitle">
+                  <span class="yearTitleText">Pour fêter ça, revoyons notre année</span>
+                  <span class="yearHighlight" id="yearHighlight">2026</span>
+                </h2>
+              </div>
+              <div class="monthsGrid" id="monthsGrid"></div>
+            </div>
+
+            <button id="nextYearBtn" class="yearNavBtn next" type="button" aria-label="Année suivante">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#efe7d2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+
+          </div>
+
+          <button id="resetBtn" class="resetBtn" aria-label="Réinitialiser">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#efe7d2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 4 23 10 17 10"/>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+            </svg>
+          </button>
+
+          <button id="openAllBtn" class="openAllBtn" aria-label="Tout ouvrir">✦</button>
+          <button class="goFinalBtn" id="goFinalBtn">Voir le message final ♥</button>
+          <div class="progressWrap">
+            <span class="progressLabel" id="progressLabel"></span>
+            <div class="progressBar"><div class="progressFill" id="progressFill"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OVERLAY : GRANDE ENVELOPPE + POLAROID ===== -->
+    <div class="overlay" id="overlay" aria-hidden="true">
+      <div class="backdrop" id="backdrop"></div>
+
+      <div class="overlayContent" role="dialog" aria-modal="true">
+        <div class="envStage" id="envStage">
+          <div class="closedBack">
+            <div class="innerLining"></div>
+            <div class="closedFlap" id="closedFlap" title="Glisse vers le haut pour ouvrir"></div>
+          </div>
+
+          <div class="photo" id="photo" aria-label="Polaroid">
+            <div class="photoInner" id="photoInner">
+              <div class="photoFace photoFront">
+                <div class="photoFrame">
+                  <img id="photoImg" class="photoImg" src="" alt="" />
+                </div>
+              </div>
+              <div class="photoFace photoBack">
+                <div id="monthNote" class="monthNote"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="overlayHint" id="overlayHint">Maintiens + glisse vers le haut pour ouvrir</div>
+      </div>
+    </div>
+
+    <!-- ===== ÉCRAN 3 : PAGE FINALE ===== -->
+    <section class="screen" id="p3">
+      <div class="finalWrap">
+        <p class="finalQuote" id="finalQuote"></p>
+        <button class="finalBackBtn" id="finalBackBtn">← retour</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
