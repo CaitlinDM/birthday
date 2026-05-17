@@ -939,7 +939,7 @@ body {
     --p2-padding-inline: 44px;
     --p2-header-gap:     6px;
     --p2-section-gap:    8px;
-    --p2-row-gap:        42px;
+    --p2-row-gap:        30px;
   }
 
   .yearNavBtn { width: 34px; height: 34px; }
